@@ -9,3 +9,4 @@ csvp
 .cabal-sandbox/
 cabal.sandbox.config
 wreq-0.2.0.0/
+.stack-work/

@@ -1,7 +1,8 @@
-{-# LANGUAGE DeriveGeneric     #-}
-{-# LANGUAGE OverloadedStrings #-}
-{-# LANGUAGE RankNTypes        #-}
-{-# LANGUAGE TemplateHaskell   #-}
+{-# LANGUAGE DeriveGeneric              #-}
+{-# LANGUAGE GeneralizedNewtypeDeriving #-}
+{-# LANGUAGE OverloadedStrings          #-}
+{-# LANGUAGE RankNTypes                 #-}
+{-# LANGUAGE TemplateHaskell            #-}
 
 module Web.Stellar.Types (
     AccountID(..),
@@ -23,29 +24,20 @@ module Web.Stellar.Types (
     Sequence(..)
   ) where
 
-import           Control.Applicative
 import           Control.Lens        hiding ((.=))
 import           Control.Monad
-import           Data.Monoid
 import           Data.Aeson
 import           Data.Aeson.Types
 import           Data.Fixed
 import           Data.Text
 import           GHC.Generics        (Generic)
 
-newtype AccountID = AccountID Text deriving (Eq, Show, Generic)
+newtype AccountID = AccountID Text
+  deriving (Eq, Show, Generic, Semigroup, Monoid)
 
 instance ToJSON AccountID
 
-instance Monoid AccountID where
-  mempty = AccountID mempty
-  mappend (AccountID m) (AccountID m') = AccountID (mappend m m')
-
-newtype Secret = Secret Text deriving (Eq, Show, Generic)
-
-instance Monoid Secret where
-  mempty = Secret mempty
-  mappend (Secret m) (Secret m') = Secret (mappend m m')
+newtype Secret = Secret Text deriving (Eq, Show, Generic, Semigroup, Monoid)
 
 instance ToJSON Secret
 

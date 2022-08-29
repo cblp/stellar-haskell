@@ -13,7 +13,6 @@ module Web.Stellar.Account (
     balance
   ) where
 
-import           Control.Applicative
 import           Control.Lens        hiding ((.=))
 import           Control.Monad
 import           Data.Aeson

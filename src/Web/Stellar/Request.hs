@@ -13,7 +13,6 @@ module Web.Stellar.Request (
   makeRequest
 ) where
 
-import           Control.Applicative
 import qualified Control.Exception    as E
 import           Control.Lens         hiding ((.=))
 import           Control.Monad

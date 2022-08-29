@@ -21,12 +21,10 @@ module Web.Stellar.Transaction (
     rawTransaction
   ) where
 
-import           Control.Applicative
 import           Control.Lens         hiding ((.=))
 import           Control.Monad
 import           Data.Aeson
 import           Data.ByteString.Lazy
-import           Data.Monoid
 import           Data.Text
 import qualified Data.Text            as T
 import           Web.Stellar.Internal

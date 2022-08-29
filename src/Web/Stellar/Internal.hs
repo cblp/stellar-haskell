@@ -8,10 +8,8 @@
 
 module Web.Stellar.Internal where
 
-import           Control.Applicative
 import           Control.Monad
 import           Data.Aeson
-import           Data.Monoid
 import           Data.Text
 
 data APIMoney = ExtractedText {

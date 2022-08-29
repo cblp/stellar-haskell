@@ -11,7 +11,6 @@ module Web.Stellar.AccountLine (
     limitPeer
   ) where
 
-import           Control.Applicative
 import           Control.Lens        hiding ((.=))
 import           Control.Monad
 import           Data.Aeson
